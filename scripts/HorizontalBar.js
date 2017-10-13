@@ -17,7 +17,6 @@ var btnprm = document.getElementsByClassName("btn-primary-lg");
 
 //var disclm = $("<span>").text("Disclaimer: Verified means it's not on our blacklist").insertAfter("#MultiplayerVisitButton");
 
-//fix bugging the div
 $.getJSON(chrome.extension.getURL("JSON/verifiedgames.json"), function(data) {
 	for(i = 0; i < data.blacklist.length; i++) {
 		if(mpvb.getAttribute("placeid") === data.blacklist[i]) {
