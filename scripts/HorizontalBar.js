@@ -28,13 +28,25 @@ $.getJSON(chrome.extension.getURL("JSON/verifiedgames.json"), function(data) {
 
 console.log(window.location.hash)
 
-/*$.get("http://api.extrablox.com/?/?game="+ gameid ).done(function (data) {
-	if (data.data) {
-					
-		//knownPremiums.push(userId);
-		//resolve(true);
+function resolve(bool) {
+	/*if (bool) {
+		
 	} else {
-					
+		return;
+	}*/
+	
+	//bool is premium or not
+	//premium.push(userid) //get userid from roblox api
+}
+
+/*$.get("http://api.extrablox.com/premium/?user="+ userid ).done(function (data) {
+	if (data.data) {
+		//if data is true the user has premium resolve true
+		
+		//resolve(true); 
+	} else {
+		//if no json user does not have premium don't resolve
+		
 		//resolve(false);
 	}
 }).fail(function () {
