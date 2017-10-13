@@ -14,13 +14,14 @@ var textcont = $("<span>").insertAfter(hrdiv1).text("[Insert something here]")
 
 var mpvb = document.getElementById("MultiplayerVisitButton");
 
-var disclm = $("<span>").text("Disclaimer: Verified means it's not on our blacklist").appendTo("#MultiplayerVisitButton")
+//var disclm = $("<span>").text("Disclaimer: Verified means it's not on our blacklist").insertAfter("#MultiplayerVisitButton");
 
 //fix bugging the div
 $.getJSON(chrome.extension.getURL("JSON/verifiedgames.json"), function(data) {
-	for(i = 0; i < data.vfg.length; i++) {
-		if(mpvb.getAttribute("placeid") === data.vfg[i]) {
-			var plusbverifyimg = $("<img>").insertAfter("#MultiplayerVisitButton").attr({"src": chrome.extension.getURL("img/Extrablox%20Verified.png")})
+	for(i = 0; i < data.blacklist.length; i++) {
+		if(mpvb.getAttribute("placeid") === data.blacklist[i]) {
+			var bl = $("<span>").text("This game is Blacklisted play at your own risk").insertAfter("#MultiplayerVisitButton")
+			//var plusbverifyimg = $("<img>").insertAfter("#MultiplayerVisitButton").attr({"src": chrome.extension.getURL("img/Extrablox%20Verified.png")})
 		}
 	}
 })
