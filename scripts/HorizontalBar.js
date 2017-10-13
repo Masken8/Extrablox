@@ -36,8 +36,9 @@ function resolve(bool) {
 	}*/
 	
 	//bool is premium or not
-	//premium.push(userid) //get userid from roblox api
 }
+
+//get userid from roblox api
 
 /*$.get("http://api.extrablox.com/premium/?user="+ userid ).done(function (data) {
 	if (data.data) {
