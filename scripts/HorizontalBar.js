@@ -41,8 +41,8 @@ console.log(window.location.hash)
 	reject([{ code: 0, message: "Ops... Your HTTP Request Failed" }]);
 });*/
 
-if(window.location.hash === "#eb.game") {
-	//implement support for unknown roblox extensions that changes the horizontal tab
+//implement support for unknown roblox extensions that changes the horizontal tab
+function horiztabcl() {
 	$("#tab-about").removeClass("active");
 	$("#tab-store").removeClass("active");
 	$("#tab-leaderboards").removeClass("active");
@@ -56,17 +56,10 @@ if(window.location.hash === "#eb.game") {
 	$(discTab).addClass("active");
 	$(discPane).addClass("active");
 }
+
+if(window.location.hash === "#eb.game") {
+	horiztabcl()
+}
 $(discTab).click(function(){
-	$("#tab-about").removeClass("active");
-	$("#tab-store").removeClass("active");
-	$("#tab-leaderboards").removeClass("active");
-	$("#tab-game-instances").removeClass("active");
-
-	$("#about").removeClass("active");
-	$("#store").removeClass("active");
-	$("#leaderboards").removeClass("active");
-	$("#game-instances").removeClass("active");
-
-	$(discTab).addClass("active");
-	$(discPane).addClass("active");
+	horiztabcl()
 });
