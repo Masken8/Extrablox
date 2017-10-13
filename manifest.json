@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"content_scripts": [{
+		"js": ["/libs/jquery-3.2.1.min.js", "/scripts/HorizontalBar.js"],
+		"matches": ["*://*.roblox.com/games*"]
+	},{
+		"js": ["/libs/jquery-3.2.1.min.js", "/scripts/websiteglobal.js"],
+		"css": ["global.css"],
+		"matches": ["*://*.roblox.com/*"]
+	}],
+	"name": "Extrablox Tools",
+	"browser_action": {
+		"default_title": "Extrablox"
+	}, 
+	"web_accessible_resources": [
+		"options.html",
+		"img/*.png",
+		"JSON/*.json"
+	],
+	"options_ui": {
+		"page": "options.html",
+		"chrome_style": true
+	},
+	"permissions": ["storage"],
+	"short_name": "Extrablox",
+	"version": "0.1.0"
+}
