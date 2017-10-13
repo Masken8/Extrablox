@@ -13,6 +13,7 @@ var hrdiv1 = $("<hr>").insertAfter(conth1);
 var textcont = $("<span>").insertAfter(hrdiv1).text("[Insert something here]")
 
 var mpvb = document.getElementById("MultiplayerVisitButton");
+var btnprm = document.getElementsByClassName("btn-primary-lg");
 
 //var disclm = $("<span>").text("Disclaimer: Verified means it's not on our blacklist").insertAfter("#MultiplayerVisitButton");
 
@@ -20,6 +21,8 @@ var mpvb = document.getElementById("MultiplayerVisitButton");
 $.getJSON(chrome.extension.getURL("JSON/verifiedgames.json"), function(data) {
 	for(i = 0; i < data.blacklist.length; i++) {
 		if(mpvb.getAttribute("placeid") === data.blacklist[i]) {
+			btnprm[0].setAttribute("style", "background-color: #313131; border-color: #313131;")
+			btnprm[0].innerHTML = "Blacklisted";
 			var bl = $("<span>").text("This game is Blacklisted play at your own risk").insertAfter("#MultiplayerVisitButton")
 			//var plusbverifyimg = $("<img>").insertAfter("#MultiplayerVisitButton").attr({"src": chrome.extension.getURL("img/Extrablox%20Verified.png")})
 		}
