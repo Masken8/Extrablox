@@ -28,31 +28,47 @@ $.getJSON(chrome.extension.getURL("JSON/verifiedgames.json"), function(data) {
 
 console.log(window.location.hash)
 
-function resolve(bool) {
-	/*if (bool) {
-		
+/*function resolve(bool) {
+	if (bool) {
+		return;
 	} else {
 		return;
-	}*/
+	}
 	
 	//bool is premium or not
-}
+}*/
 
 //get userid from roblox api
 
-/*$.get("http://api.extrablox.com/premium/?user="+ userid ).done(function (data) {
-	if (data.data) {
-		//if data is true the user has premium resolve true
-		
-		//resolve(true); 
-	} else {
-		//if no json user does not have premium don't resolve
-		
-		//resolve(false);
-	}
+var userid;
+
+$.getJSON("https://www.roblox.com/my/account/json").done(function (data) {
+	console.log(data)
+	userid = data.UserId
+	console.log(userid)
+	//hasasset()
 }).fail(function () {
-	reject([{ code: 0, message: "Ops... Your HTTP Request Failed" }]);
-});*/
+	console.error({ code: 2, message: "Failed to get user"})
+});
+
+//assetid 1108604184
+
+/*function hasasset() {
+	$.get("https://api.roblox.com/Ownership/HasAsset?userId="+ userid + "&assetId=1108604184").done(function (data) {
+		if (data) {
+			console.log("Ya");
+			console.log(data);
+			
+			//resolve(true); 
+		} else {
+			console.log("Nah");
+			
+			//resolve(false);
+		}
+	}).fail(function () {
+		console.error({ code: 1, message: "Failed to get ownership" });
+	});
+}*/
 
 //implement support for unknown roblox extensions that changes the horizontal tab
 function horiztabcl() {

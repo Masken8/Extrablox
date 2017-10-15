@@ -8,6 +8,9 @@
 		"css": ["global.css"],
 		"matches": ["*://*.roblox.com/*"]
 	}],
+	"background": {
+		"scripts": ["/libs/jquery-3.2.1.min.js", "/scripts/Notify.js"]
+	},
 	"name": "Extrablox Tools",
 	"browser_action": {
 		"default_title": "Extrablox"
@@ -21,7 +24,7 @@
 		"page": "options.html",
 		"chrome_style": true
 	},
-	"permissions": ["storage"],
+	"permissions": ["storage", "background"],
 	"short_name": "Extrablox",
 	"version": "0.1.0"
 }
