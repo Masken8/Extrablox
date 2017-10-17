@@ -72,6 +72,9 @@ $.getJSON("https://www.roblox.com/my/account/json").done(function (data) {
 
 //implement support for unknown roblox extensions that changes the horizontal tab
 function horiztabcl() {
+	//$("*#horizontal-tabs").find("li").removeClass("active")
+	//$(".horizontal-tabs").
+	
 	$("#tab-about").removeClass("active");
 	$("#tab-store").removeClass("active");
 	$("#tab-leaderboards").removeClass("active");
@@ -81,7 +84,7 @@ function horiztabcl() {
 	$("#store").removeClass("active");
 	$("#leaderboards").removeClass("active");
 	$("#game-instances").removeClass("active");
-
+	
 	$(discTab).addClass("active");
 	$(discPane).addClass("active");
 }
